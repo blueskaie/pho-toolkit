@@ -8,7 +8,7 @@
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/blueskaie/pho-defi-toolkit/tree/master/packages/pho-defi-uikit",
+  "repository": "https://github.com/blueskaie/pho-toolkit/tree/master/packages/pho-defi-uikit",
   "license": "MIT",
   "scripts": {
     "start": "yarn storybook",
