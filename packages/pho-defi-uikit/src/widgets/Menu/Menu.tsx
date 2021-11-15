@@ -50,6 +50,13 @@ const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   max-width: 100%;
 `;
 
+const PhoLogo = styled.div<{ isDark: boolean }>`
+  color: ${({ isDark }) => (isDark ? 'white' : 'black')};
+  font-weight: bold;
+  font-size: 22px;  console.log(config(t));
+  padding: 16px 0;
+`;
+
 const Menu: React.FC<NavProps> = ({
   userMenu,
   globalMenu,
@@ -57,6 +64,7 @@ const Menu: React.FC<NavProps> = ({
   toggleTheme,
   currentLang,
   setLang,
+  isShowCakePrice,
   cakePriceUsd,
   links,
   subLinks,
@@ -110,11 +118,12 @@ const Menu: React.FC<NavProps> = ({
     <Wrapper>
       <StyledNav showMenu={showMenu}>
         <Flex>
-          <Logo isDark={isDark} href={homeLink?.href ?? "/"} />
+          <PhoLogo isDark={isDark}>PhoSwap</PhoLogo>
+          {/* <Logo isDark={isDark} href={homeLink?.href ?? "/"} /> */}
           {!isMobile && <MenuItems items={links} activeItem={activeItem} activeSubItem={activeSubItem} ml="24px" />}
         </Flex>
         <Flex alignItems="center">
-          {!isMobile && (
+          {!isMobile && isShowCakePrice && (
             <Box mr="12px">
               <CakePrice cakePriceUsd={cakePriceUsd} />
             </Box>
