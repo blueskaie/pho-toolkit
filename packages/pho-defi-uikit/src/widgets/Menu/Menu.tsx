@@ -13,6 +13,7 @@ import Logo from "./components/Logo";
 import { MENU_HEIGHT, MOBILE_MENU_HEIGHT } from "./config";
 import { NavProps } from "./types";
 import LangSelector from "../../components/LangSelector/LangSelector";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   position: relative;
@@ -118,7 +119,7 @@ const Menu: React.FC<NavProps> = ({
     <Wrapper>
       <StyledNav showMenu={showMenu}>
         <Flex>
-          <PhoLogo isDark={isDark}>PhoSwap</PhoLogo>
+          <Link to={homeLink?.href ?? "/"}><PhoLogo isDark={isDark}>PhoSwap</PhoLogo></Link>
           {/* <Logo isDark={isDark} href={homeLink?.href ?? "/"} /> */}
           {!isMobile && <MenuItems items={links} activeItem={activeItem} activeSubItem={activeSubItem} ml="24px" />}
         </Flex>
